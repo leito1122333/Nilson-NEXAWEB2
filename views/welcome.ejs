@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>👋 Hola, <%= user.Nombres_y_Apellidos %>!</h1>
+        <p>✔ Has iniciado sesión correctamente.</p>
+        
+        <!-- Mostrar rol del usuario -->
+        <p>Tu rol es:</p>
+        <% if (user.Rol_Usuario.Normal) { %>
+            <p>👤 Usuario Normal</p>
+        <% } %>
+        <% if (user.Rol_Usuario.Administrador) { %>
+            <p>⚙️ Administrador</p>
+        <% } %>
+        <% if (user.Rol_Usuario.SuperAdministrador) { %>
+            <p>🔑 SuperAdministrador</p>
+        <% } %>
+
+        <a href="/logout" class="logout-btn">🚪 Cerrar Sesión</a>
+    </div>
+</body>
+</html>
